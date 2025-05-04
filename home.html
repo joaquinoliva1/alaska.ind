@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
-  <title>Spicy Indumentaria</title>
+  <title>Alaska</title>
   <link rel="icon" type="image/png" href="favicon.png">
   <style>
     body {
+      font-family: "Cal Sans";
+      font-weight: 400;
+      font-style: normal;
       margin: 0;
       background-color: black ;
-      font-family: Arial, Helvetica, sans-serif;
     }
     .navbar {
       position:relative;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background-color: #e6e5e0;
+      background-color: white;
       padding: 10px 20px;
       color: white;
     }
@@ -43,21 +48,22 @@
     }
 
     .navbar-center a:hover {
-      color: #f48fb1;
+      color: #0097b2;
     }
-
-    .logout-button {
-      background-color: #e6e5e0;
-      border: none;
-      padding: 8px 15px;
-      border-radius: 5px;
-      color: rgb(0, 0, 0);
-      cursor: pointer;
-      font-size: 16px;
+    .logout-button{
+      border-radius: 0px;
+      border-color: white;
+      border-style: none;
+      background-color: white;
+    }
+    .logout-button img {
+      height: 40px;
+      background-color: white;
     }
 
     .logout-button:hover {
-      color: red;
+      opacity: 0.5;
+      cursor: pointer;
     }
 
     .productos{
@@ -81,8 +87,8 @@
     }
 
     .improducto img{
-      width: 200px;
-      height: auto;
+      width: 230px;
+      height: 350px;
       -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
       mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
     }
@@ -90,6 +96,22 @@
     .improducto img:hover{
       opacity: 0.5;
       cursor: pointer;
+    }
+
+    .productos p {
+      color: white;
+    }
+
+    .banner {
+      width: 100%;
+      height: 550px;
+      overflow: hidden;
+    }
+
+    .banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   </style>
 </head>
@@ -106,39 +128,48 @@
       <a href="camperas.html">Camperas</a>
     </div>
     <div class="navbar-right">
-      <button class="logout-button" onclick="logout()">Logout</button>
+      <button class="logout-button" onclick="logout()"><img src="logout.png"></button>
     </div>
   </nav>
+  <div class="banner">
+    <img src="banner.jpg" alt="Banner">
+  </div>
   <div class="productos">
     <div class="producto">
       <div class="improducto">
-        <img src="fotos/pantalon1.jpg" alt="pantalon1">
+        <img src="fotos/outfit1.jpg">
       </div>
+      <p>Outfit #1</p>
     </div>
     <div class="producto">
       <div class="improducto">
-        <img src="fotos/pantalon2.jpg" alt="pantalon2">
+        <img src="fotos/outfit2.jpg">
       </div>
+      <p>Outfit #2</p>
     </div>
     <div class="producto">
       <div class="improducto">
-        <img src="fotos/pantalon3.jpg" alt="pantalon3">
+        <img src="fotos/outfit3.jpg">
       </div>
+      <p>Outfit #3</p>
     </div>
     <div class="producto">
       <div class="improducto">
-        <img src="fotos/pantalon4.jpg" alt="pantalon4">
+        <img src="fotos/outfit4.jpg">
       </div>
+      <p>Outfit #4</p>
     </div>
     <div class="producto">
       <div class="improducto">
-        <img src="fotos/pantalon5.jpg" alt="pantalon5">
+        <img src="fotos/outfit5.jpg">
       </div>
+      <p>Outfit #5</p>
     </div>
     <div class="producto">
       <div class="improducto">
-        <img src="fotos/pantalon6.jpg" alt="pantalon6">
+        <img src="fotos/outfit6.jpg">
       </div>
+      <p>Outfit #6</p>
     </div>
   </div>
   <script>
