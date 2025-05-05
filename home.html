@@ -1,181 +1,191 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet">
-  <meta charset="UTF-8">
-  <title>Alaska</title>
-  <link rel="icon" type="image/png" href="favicon.png">
-  <style>
-    body {
-      font-family: "Cal Sans";
-      font-weight: 400;
-      font-style: normal;
-      margin: 0;
-      background-color: black ;
-    }
-    .navbar {
-      position:relative;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background-color: white;
-      padding: 10px 20px;
-      color: white;
-    }
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <title>Alaska</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Cal Sans";
+        font-weight: 400;
+        font-style: normal;
+        margin: 0;
+        background-color: black;
+      }
+      .navbar {
+        width: 10% 100%;
+        display: flex;
+        justify-content: space-between;
+        background-color: white;
+        padding: 20px 20px;
+        color: white;
+      }
+      .logout-button {
+        border-radius: 0px;
+        border-color: white;
+        border-style: none;
+        background-color: white;
+      }
+      .logout-button img {
+        height: 40px;
+        background-color: white;
+      }
 
-    .navbar-left, .navbar-center, .navbar-right {
-      display: flex;
-      align-items: center;
-    }
+      .logout-button:hover {
+        opacity: 0.5;
+        cursor: pointer;
+      }
 
-    .navbar-left a.logo {
-      display: flex;
-      align-items: center;
-    }
+      .productos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+      }
 
-    .navbar-left a.logo img {
-      height: 30px;
-      margin-right: 10px;
-    }
+      .producto {
+        text-align: center;
+      }
 
-    .navbar-center a {
-      margin: 0 17px;
-      text-decoration: none;
-      color: rgb(0, 0, 0);
-      font-size: 17px;
-    }
+      .improducto img {
+        width: 230px;
+        height: 350px;
+        -webkit-mask-image: linear-gradient(
+          to right,
+          transparent,
+          black 20%,
+          black 80%,
+          transparent
+        );
+        mask-image: linear-gradient(
+          to right,
+          transparent,
+          black 20%,
+          black 80%,
+          transparent
+        );
+      }
 
-    .navbar-center a:hover {
-      color: #0097b2;
-    }
-    .logout-button{
-      border-radius: 0px;
-      border-color: white;
-      border-style: none;
-      background-color: white;
-    }
-    .logout-button img {
-      height: 40px;
-      background-color: white;
-    }
+      .improducto img:hover {
+        opacity: 0.5;
+        cursor: pointer;
+      }
 
-    .logout-button:hover {
-      opacity: 0.5;
-      cursor: pointer;
-    }
+      .productos p {
+        color: white;
+      }
 
-    .productos{
-      display: flex;
-      flex-direction: row;
-      width: 100%;
-      height: calc(100vh - 60px);
-      padding: 40px;
-      gap: 10px;
-      box-sizing: border-box;
-      align-items: flex-start;
-    }
+      .banner {
+        width: 100%;
+        height: 550px;
+        overflow: hidden;
+      }
 
-    .producto{
-      flex: 1;
-      text-align: center;
-      height: auto;
-      background-color: transparent;
-      padding: 2rem;
-      border-radius: 12px;
-    }
-
-    .improducto img{
-      width: 230px;
-      height: 350px;
-      -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
-      mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
-    }
-
-    .improducto img:hover{
-      opacity: 0.5;
-      cursor: pointer;
-    }
-
-    .productos p {
-      color: white;
-    }
-
-    .banner {
-      width: 100%;
-      height: 550px;
-      overflow: hidden;
-    }
-
-    .banner img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  </style>
-</head>
-<body>
-  <nav class="navbar">
-    <div class="navbar-left">
-      <a href="home.html" class="logo">
-        <img src="logo.png" alt="Logo">
-      </a>
-    </div>
-    <div class="navbar-center">
-      <a href="pantalones.html">Pantalones</a>
-      <a href="remeras.html">Remeras</a>
-      <a href="camperas.html">Camperas</a>
-    </div>
-    <div class="navbar-right">
-      <button class="logout-button" onclick="logout()"><img src="logout.png"></button>
-    </div>
-  </nav>
-  <div class="banner">
-    <img src="banner.jpg" alt="Banner">
-  </div>
-  <div class="productos">
-    <div class="producto">
-      <div class="improducto">
-        <img src="fotos/outfit1.jpg">
+      .banner img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white px-4">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="home.html">
+          <img src="logo.png" alt="Logo" height="40" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-between"
+          id="mainNavbar"
+        >
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="pantalones.html">Pantalones</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="remeras.html">Remeras</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="camperas.html">Camperas</a>
+            </li>
+          </ul>
+          <div class="d-flex">
+            <button class="logout-button" onclick="logout()">
+              <img src="logout.png" alt="Logout" height="30" />
+            </button>
+          </div>
+        </div>
       </div>
-      <p>Outfit #1</p>
+    </nav>
+
+    <div class="banner">
+      <img src="banner.jpg" alt="Banner" />
     </div>
-    <div class="producto">
-      <div class="improducto">
-        <img src="fotos/outfit2.jpg">
+    <div class="productos">
+      <div class="producto">
+        <div class="improducto">
+          <img src="fotos/outfit1.jpg" />
+        </div>
+        <p>Outfit #1</p>
       </div>
-      <p>Outfit #2</p>
-    </div>
-    <div class="producto">
-      <div class="improducto">
-        <img src="fotos/outfit3.jpg">
+      <div class="producto">
+        <div class="improducto">
+          <img src="fotos/outfit2.jpg" />
+        </div>
+        <p>Outfit #2</p>
       </div>
-      <p>Outfit #3</p>
-    </div>
-    <div class="producto">
-      <div class="improducto">
-        <img src="fotos/outfit4.jpg">
+      <div class="producto">
+        <div class="improducto">
+          <img src="fotos/outfit3.jpg" />
+        </div>
+        <p>Outfit #3</p>
       </div>
-      <p>Outfit #4</p>
-    </div>
-    <div class="producto">
-      <div class="improducto">
-        <img src="fotos/outfit5.jpg">
+      <div class="producto">
+        <div class="improducto">
+          <img src="fotos/outfit4.jpg" />
+        </div>
+        <p>Outfit #4</p>
       </div>
-      <p>Outfit #5</p>
-    </div>
-    <div class="producto">
-      <div class="improducto">
-        <img src="fotos/outfit6.jpg">
+      <div class="producto">
+        <div class="improducto">
+          <img src="fotos/outfit5.jpg" />
+        </div>
+        <p>Outfit #5</p>
       </div>
-      <p>Outfit #6</p>
+      <div class="producto">
+        <div class="improducto">
+          <img src="fotos/outfit6.jpg" />
+        </div>
+        <p>Outfit #6</p>
+      </div>
     </div>
-  </div>
-  <script>
-    function logout() {
-      window.location.href = "index.html";
-    }
-  </script>
-</body>
+    <script>
+      function logout() {
+        window.location.href = "index.html";
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
