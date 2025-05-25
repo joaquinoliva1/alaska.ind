@@ -1,0 +1,123 @@
+body {
+  font-family: "Cal Sans";
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+  background-color: black;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+/* Ajustes para las tarjetas de productos */
+.card.outfit-card {
+  width: 16rem;
+  height: 28rem;
+  transition: width 0.2s, height 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+.card.outfit-card .card-img-top {
+  flex: 1 1 auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-bottom: none;
+  margin-bottom: 0;
+  min-height: 0;
+  max-height: calc(100% - 3.5rem); /* Ajusta según el alto del card-body */
+}
+.card.outfit-card .card-body {
+  flex: 0 0 auto;
+  padding: 1rem 0.5rem 0.5rem 0.5rem;
+  background: transparent;
+}
+
+@media (min-width: 576px) {
+  .card.outfit-card {
+    width: 17rem;
+    height: 30rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .card.outfit-card {
+    width: 18rem;
+    height: 32rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card.outfit-card {
+    width: 19rem;
+    height: 34rem;
+  }
+}
+
+/* Ajuste para que no haya recortes laterales y se mantenga en una línea hasta md */
+.outfits-row {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 10px !important; /* Menor separación entre tarjetas */
+}
+@media (min-width: 768px) {
+  .outfits-row {
+    flex-wrap: wrap;
+    overflow-x: visible;
+    gap: 10px !important; /* Mantener menor separación en pantallas grandes */
+  }
+}
+
+.navbar-nav .dropdown-menu.dropdown-menu-form {
+  min-width: 300px;
+  max-width: 450px;
+  padding: 2rem !important;
+  box-sizing: border-box;
+  display: none !important;
+  position: absolute;
+  left: auto;
+  right: 0;
+  top: 100%;
+  transform: none !important;
+}
+
+.navbar-nav .dropdown-menu.dropdown-menu-form.show-always {
+  display: block !important;
+  transform: none !important;
+}
+
+.dropdown-menu-form form {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.dropdown-menu-form .form-label,
+.dropdown-menu-form .form-check-label,
+.dropdown-menu-form a,
+.dropdown-menu-form h5 {
+  font-size: 0.875em;
+}
+
+.dropdown-menu-form .form-control,
+.dropdown-menu-form .btn {
+  font-size: 0.875em;
+  padding: 0.375rem 0.75rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.dropdown-menu-form .invalid-feedback,
+.dropdown-menu-form .valid-feedback {
+  font-size: 0.75em;
+  margin-top: 0.25rem;
+}
+
+.form-section {
+  display: none;
+}
+.form-section.active {
+  display: block;
+}
+.form-selector-buttons .btn {
+  flex-grow: 1;
+}
