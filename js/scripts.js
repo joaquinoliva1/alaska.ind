@@ -216,6 +216,15 @@ const navBar = `
     </div>
   </nav>
 `;
+
+// array que permite más flexibilidad a la hora de agregar o quitar secciones
+// en el navbar, ya que solo hay que modificar el array y no el HTML
+const sectionRoutes = [
+  { name: "pantalones", path: "#pantalones" },
+  { name: "remeras", path: "#remeras" },
+  { name: "camperas", path: "#camperas" },
+];
+
 const footer = `
       <div>© 2025 Alaska. Todos los derechos reservados.</div>
       <div style="font-size: 0.9em">
@@ -231,7 +240,23 @@ window.addEventListener("load", () => {
     footerContainer.innerHTML = footer;
   }
 
-  // --- Mueve aquí toda la lógica de listeners y selectores ---
+  // generar dinámicamente los enlaces del navbar usando sectionRoutes
+  const menuList = document.querySelector(".navbar-nav.flex-row");
+  if (menuList) {
+    menuList.innerHTML = sectionRoutes
+      .map(
+        (route) => `
+      <li class="nav-item">
+        <a class="nav-link" href="#" onclick="loadSection('${
+          route.name
+        }'); return false;">
+          ${route.name.charAt(0).toUpperCase() + route.name.slice(1)}
+        </a>
+      </li>
+    `
+      )
+      .join("");
+  }
   (function () {
     "use strict";
 
