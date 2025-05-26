@@ -105,11 +105,6 @@ const navBar = `
                       Acceder
                     </button>
                   </div>
-                  <div class="text-center small mt-3">
-                    <a href="#" class="text-decoration-none"
-                      >¿Olvidaste tu contraseña?</a
-                    >
-                  </div>
                 </form>
               </div>
 
@@ -216,7 +211,6 @@ const navBar = `
     </div>
   </nav>
 `;
-
 // array que permite más flexibilidad a la hora de agregar o quitar secciones
 // en el navbar, ya que solo hay que modificar el array y no el HTML
 const sectionRoutes = [
@@ -239,7 +233,6 @@ window.addEventListener("load", () => {
   if (footerContainer) {
     footerContainer.innerHTML = footer;
   }
-
   // generar dinámicamente los enlaces del navbar usando sectionRoutes
   const menuList = document.querySelector(".navbar-nav.flex-row");
   if (menuList) {
@@ -317,6 +310,7 @@ window.addEventListener("load", () => {
       registerFormElement.addEventListener(
         "submit",
         function (event) {
+          event.preventDefault(); // Evita el envío tradicional
           var password = document.getElementById("password");
           var confirmPassword = document.getElementById("confirmPassword");
           if (password.value !== confirmPassword.value) {
@@ -330,6 +324,7 @@ window.addEventListener("load", () => {
           } else {
             event.preventDefault();
             alert("Te registraste con exito.");
+            window.location.href = "home.html";
             dropdownMenu.classList.remove("show-always");
             navbarDropdownAuthBtn.setAttribute("aria-expanded", "false");
             dropdownMenu.classList.remove("show");
@@ -395,6 +390,13 @@ window.addEventListener("load", () => {
     if (dropdownMenu) {
       dropdownMenu.addEventListener("click", function (e) {
         e.stopPropagation();
+      });
+    }
+    var loginFormElement = document.querySelector("#loginForm form");
+    if (loginFormElement) {
+      loginFormElement.addEventListener("submit", function (event) {
+        event.preventDefault();
+        window.location.href = "home.html";
       });
     }
   })();
