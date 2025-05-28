@@ -16,162 +16,93 @@
     />
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
-  <body>
-    <header></header>
+  <body onload="loadSection('index')">
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light px-3 fixed-top">
+        <div
+          class="container-fluid d-flex justify-content-between align-items-center"
+        >
+          <!-- Logo a la izquierda -->
+          <a class="navbar-brand me-3">
+            <a
+                  class="nav-link"
+                  href="#"
+                  onclick="loadSection('index'); return false;"
+                >
+                <img
+              src="./assets/img/logo.png"
+              alt="Logo"
+              height="30rem"
+              class="d-inline-block align-top"
+            />
+            </a>
+          </a>
+          <!-- Menú de secciones en el centro -->
+          <div class="d-none d-lg-flex flex-grow-1 justify-content-center">
+            <ul class="navbar-nav mb-2 mb-lg-0 flex-row gap-3">
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="#"
+                  onclick="loadSection('pantalones'); return false;"
+                >
+                Pantalones</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="#"
+                  onclick="loadSection('remeras'); return false;"
+                  >Remeras</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="#"
+                  onclick="loadSection('camperas'); return false;"
+                  >Camperas</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Dropdown a la derecha -->
+          <div class="ms-auto">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdownAuth"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <img src="./assets/img/user.png" style="height: 2.2rem;">
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownAuth">
+                <li>
+                <a class="dropdown-item" href="index.html">Cerrar sesión</a>
+                </li>
+                <li>
+                <a class="dropdown-item text-danger" href="index.html" onclick="return confirm('¿Estás seguro de que deseas eliminar tu cuenta?');">Eliminar cuenta</a>
+                </li>
+              </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
     <div style="height: 3rem"></div>
-    <div id="main-content" class="container-fluid my-5">
-      <div class="row justify-content-center g-2 outfits-row">
-        <!-- Tarjeta 1 -->
-        <div
-          class="col-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center"
-        >
-          <div class="card text-center mx-auto outfit-card">
-            <img
-              src="./assets/cards/outfit1.jpg"
-              class="card-img-top img-fluid"
-              alt="Outfit #1"
-            />
-            <div class="card-body">
-              <p class="card-text">Outfit #1</p>
-            </div>
-          </div>
-        </div>
-        <!-- Tarjeta 2 -->
-        <div
-          class="col-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center"
-        >
-          <div class="card text-center mx-auto outfit-card">
-            <img
-              src="./assets/cards/outfit2.jpg"
-              class="card-img-top img-fluid"
-              alt="Outfit #2"
-            />
-            <div class="card-body">
-              <p class="card-text">Outfit #2</p>
-            </div>
-          </div>
-        </div>
-        <!-- Tarjeta 3 -->
-        <div
-          class="col-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center"
-        >
-          <div class="card text-center mx-auto outfit-card">
-            <img
-              src="./assets/cards/outfit3.jpg"
-              class="card-img-top img-fluid"
-              alt="Outfit #3"
-            />
-            <div class="card-body">
-              <p class="card-text">Outfit #3</p>
-            </div>
-          </div>
-        </div>
-        <!-- Tarjeta 4 -->
-        <div
-          class="col-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center"
-        >
-          <div class="card text-center mx-auto outfit-card">
-            <img
-              src="./assets/cards/outfit4.jpg"
-              class="card-img-top img-fluid"
-              alt="Outfit #4"
-            />
-            <div class="card-body">
-              <p class="card-text">Outfit #4</p>
-            </div>
-          </div>
-        </div>
-        <!-- Tarjeta 5 -->
-        <div
-          class="col-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center"
-        >
-          <div class="card text-center mx-auto outfit-card">
-            <img
-              src="./assets/cards/outfit5.jpg"
-              class="card-img-top img-fluid"
-              alt="Outfit #5"
-            />
-            <div class="card-body">
-              <p class="card-text">Outfit #5</p>
-            </div>
-          </div>
-        </div>
-        <!-- Tarjeta 6 -->
-        <div
-          class="col-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center"
-        >
-          <div class="card text-center mx-auto outfit-card">
-            <img
-              src="./assets/cards/outfit6.jpg"
-              class="card-img-top img-fluid"
-              alt="Outfit #6"
-            />
-            <div class="card-body">
-              <p class="card-text">Outfit #6</p>
-            </div>
-          </div>
-        </div>
-        <!-- Tarjeta 7 -->
-        <div
-          class="col-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center"
-        >
-          <div class="card text-center mx-auto outfit-card">
-            <img
-              src="./assets/cards/outfit7.jpg"
-              class="card-img-top img-fluid"
-              alt="Outfit #6"
-            />
-            <div class="card-body">
-              <p class="card-text">Outfit #7</p>
-            </div>
-          </div>
-        </div>
-        <!-- Tarjeta 8 -->
-        <div
-          class="col-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center"
-        >
-          <div class="card text-center mx-auto outfit-card">
-            <img
-              src="./assets/cards/outfit8.jpg"
-              class="card-img-top img-fluid"
-              alt="Outfit #6"
-            />
-            <div class="card-body">
-              <p class="card-text">Outfit #8</p>
-            </div>
-          </div>
-        </div>
-        <!-- Tarjeta 9 -->
-        <div
-          class="col-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center"
-        >
-          <div class="card text-center mx-auto outfit-card">
-            <img
-              src="./assets/cards/outfit9.jpg"
-              class="card-img-top img-fluid"
-              alt="Outfit #6"
-            />
-            <div class="card-body">
-              <p class="card-text">Outfit #9</p>
-            </div>
-          </div>
-        </div>
-        <!-- Tarjeta 10 -->
-        <div
-          class="col-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center"
-        >
-          <div class="card text-center mx-auto outfit-card">
-            <img
-              src="./assets/cards/outfit10.jpg"
-              class="card-img-top img-fluid"
-              alt="Outfit #6"
-            />
-            <div class="card-body">
-              <p class="card-text">Outfit #10</p>
-            </div>
-          </div>
-        </div>
+    <div id="main-content" class="container-fluid my-5" ></div>
+    <div class="dropdown" id="cart-dropdown" style="display: none;">
+      <div class="globo" data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="./assets/img/compras.png" style="height: 2rem;"></img>
       </div>
+      <ul class="dropdown-menu dropdown-menu-end" id="cart-items">
+        <li class="dropdown-item text-muted">Carrito vacío</li>
+      </ul>
     </div>
     <footer
       class="bg-white text-center text-black py-3 mt-5"

@@ -1,216 +1,3 @@
-const navBar = `
-  <nav class="navbar navbar-expand-lg navbar-light bg-light px-3 fixed-top">
-    <div class="container-fluid d-flex justify-content-between align-items-center">
-      <!-- Logo a la izquierda -->
-      <a class="navbar-brand me-3" href="index.html">
-        <img
-          src="./assets/img/logo.png"
-          alt="Logo"
-          height="30rem"
-          class="d-inline-block align-top"
-        />
-      </a>
-      <!-- Menú de secciones en el centro -->
-      <div class="d-none d-lg-flex flex-grow-1 justify-content-center">
-        <ul class="navbar-nav mb-2 mb-lg-0 flex-row gap-3">
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              href="#"
-              onclick="loadSection('pantalones'); return false;"
-              >Pantalones</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              href="#"
-              onclick="loadSection('remeras'); return false;"
-              >Remeras</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              href="#"
-              onclick="loadSection('camperas'); return false;"
-              >Camperas</a
-            >
-          </li>
-        </ul>
-      </div>
-      <!-- Dropdown a la derecha -->
-      <div class="ms-auto">
-        <ul class="navbar-nav mb-2 mb-lg-0">
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdownAuth"
-              role="button"
-              aria-expanded="false"
-            >
-              access
-            </a>
-            <div
-              class="dropdown-menu dropdown-menu-end dropdown-menu-form"
-              aria-labelledby="navbarDropdownAuth"
-            >
-              <div class="d-flex gap-2 mb-4 form-selector-buttons">
-                <button
-                  type="button"
-                  class="btn btn-outline-primary active"
-                  data-form="loginForm"
-                >
-                  Iniciar Sesión
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-outline-primary"
-                  data-form="registerForm"
-                >
-                  Registrarse
-                </button>
-              </div>
-
-              <div id="loginForm" class="form-section active">
-                <h5 class="text-center mb-3">Iniciar Sesión</h5>
-                <form>
-                  <div class="mb-2">
-                    <label for="loginEmail" class="form-label"
-                      >Correo electrónico</label
-                    >
-                    <input
-                      type="email"
-                      class="form-control form-control-sm"
-                      id="loginEmail"
-                      placeholder="nombre@ejemplo.com"
-                      required
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <label for="loginPassword" class="form-label"
-                      >Contraseña</label
-                    >
-                    <input
-                      type="password"
-                      class="form-control form-control-sm"
-                      id="loginPassword"
-                      placeholder="Tu contraseña"
-                      required
-                    />
-                  </div>
-                  <div class="d-grid gap-2 mb-2">
-                    <button type="submit" class="btn btn-primary btn-sm">
-                      Acceder
-                    </button>
-                  </div>
-                </form>
-              </div>
-
-              <div id="registerForm" class="form-section">
-                <h5 class="text-center mb-3">Registro de Usuario</h5>
-                <form
-                  class="needs-validation"
-                  novalidate
-                  id="registerFormElement"
-                >
-                  <div class="mb-2">
-                    <label for="nombre" class="form-label"
-                      >Nombre completo</label
-                    >
-                    <input
-                      type="text"
-                      class="form-control form-control-sm"
-                      id="nombre"
-                      placeholder="Ingresa tu nombre"
-                      required
-                    />
-                    <div class="invalid-feedback">
-                      Por favor, ingresa tu nombre completo.
-                    </div>
-                    <div class="valid-feedback">¡Se ve bien!</div>
-                  </div>
-                  <div class="mb-2">
-                    <label for="email" class="form-label"
-                      >Correo electrónico</label
-                    >
-                    <input
-                      type="email"
-                      class="form-control form-control-sm"
-                      id="email"
-                      placeholder="nombre@ejemplo.com"
-                      required
-                    />
-                    <div class="invalid-feedback">
-                      Por favor, ingresa un correo electrónico válido.
-                    </div>
-                    <div class="valid-feedback">¡Correo válido!</div>
-                  </div>
-                  <div class="mb-2">
-                    <label for="password" class="form-label"
-                      >Contraseña</label
-                    >
-                    <input
-                      type="password"
-                      class="form-control form-control-sm"
-                      id="password"
-                      placeholder="Ingresa tu contraseña"
-                      required
-                      minlength="6"
-                    />
-                    <div class="invalid-feedback">
-                      La contraseña debe tener al menos 6 caracteres.
-                    </div>
-                    <div class="valid-feedback">Contraseña aceptable.</div>
-                  </div>
-                  <div class="mb-2">
-                    <label for="confirmPassword" class="form-label"
-                      >Confirmar contraseña</label
-                    >
-                    <input
-                      type="password"
-                      class="form-control form-control-sm"
-                      id="confirmPassword"
-                      placeholder="Confirma tu contraseña"
-                      required
-                    />
-                    <div class="invalid-feedback">
-                      Las contraseñas no coinciden.
-                    </div>
-                    <div class="valid-feedback">Contraseñas coinciden.</div>
-                  </div>
-                  <div class="form-check mb-2">
-                    <input
-                      class="form-check-input"
-                      type="checkbox"
-                      id="termsCheck"
-                      required
-                    />
-                    <label class="form-check-label" for="termsCheck">
-                      Acepto los
-                      <a href="#" class="text-decoration-none"
-                        >términos y condiciones</a
-                      >
-                    </label>
-                    <div class="invalid-feedback">
-                      Debes aceptar los términos y condiciones.
-                    </div>
-                  </div>
-                  <div class="d-grid gap-2 mb-2">
-                    <button type="submit" class="btn btn-primary btn-sm">
-                      Registrarse
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-`;
 // array que permite más flexibilidad a la hora de agregar o quitar secciones
 // en el navbar, ya que solo hay que modificar el array y no el HTML
 const sectionRoutes = [
@@ -219,17 +6,17 @@ const sectionRoutes = [
   { name: "camperas", path: "#camperas" },
 ];
 
+let log = window.location.pathname.endsWith("home.html");
+
 const footer = `
       <div>© 2025 Alaska. Todos los derechos reservados.</div>
       <div style="font-size: 0.9em">
         Hecho con <span style="color: #e25555">♥</span> por Joaquin Oliva.
       </div>
 `;
-let navContainer = document.querySelector("header");
 let footerContainer = document.querySelector("footer");
 
 window.addEventListener("load", () => {
-  navContainer.innerHTML = navBar;
   if (footerContainer) {
     footerContainer.innerHTML = footer;
   }
@@ -250,6 +37,7 @@ window.addEventListener("load", () => {
       )
       .join("");
   }
+
   (function () {
     "use strict";
 
@@ -272,39 +60,45 @@ window.addEventListener("load", () => {
         }
       });
 
-      loginBtn.classList.remove("active", "btn-primary");
-      loginBtn.classList.add("btn-outline-primary");
-      registerBtn.classList.remove("active", "btn-primary");
-      registerBtn.classList.add("btn-outline-primary");
+      if (loginBtn && registerBtn) {
+        loginBtn.classList.remove("active", "btn-primary");
+        loginBtn.classList.add("btn-outline-primary");
+        registerBtn.classList.remove("active", "btn-primary");
+        registerBtn.classList.add("btn-outline-primary");
+      }
 
       if (formIdToShow === "loginForm") {
-        loginBtn.classList.add("active", "btn-primary");
-        loginBtn.classList.remove("btn-outline-primary");
+        loginBtn && loginBtn.classList.add("active", "btn-primary");
+        loginBtn && loginBtn.classList.remove("btn-outline-primary");
       } else if (formIdToShow === "registerForm") {
-        registerBtn.classList.add("active", "btn-primary");
-        registerBtn.classList.remove("btn-outline-primary");
+        registerBtn && registerBtn.classList.add("active", "btn-primary");
+        registerBtn && registerBtn.classList.remove("btn-outline-primary");
       }
     }
-    loginBtn.addEventListener("click", function () {
-      showForm("loginForm");
-      if (
-        registerFormElement &&
-        registerFormElement.classList.contains("was-validated")
-      ) {
-        registerFormElement.classList.remove("was-validated");
-        registerFormElement
-          .querySelectorAll(".form-control")
-          .forEach((input) => {
-            input.classList.remove("is-valid", "is-invalid");
-          });
-        registerFormElement
-          .querySelector("#termsCheck")
-          .classList.remove("is-valid", "is-invalid");
-      }
-    });
-    registerBtn.addEventListener("click", function () {
-      showForm("registerForm");
-    });
+
+    loginBtn &&
+      loginBtn.addEventListener("click", function () {
+        showForm("loginForm");
+        if (
+          registerFormElement &&
+          registerFormElement.classList.contains("was-validated")
+        ) {
+          registerFormElement.classList.remove("was-validated");
+          registerFormElement
+            .querySelectorAll(".form-control")
+            .forEach((input) => {
+              input.classList.remove("is-valid", "is-invalid");
+            });
+          registerFormElement
+            .querySelector("#termsCheck")
+            .classList.remove("is-valid", "is-invalid");
+        }
+      });
+    registerBtn &&
+      registerBtn.addEventListener("click", function () {
+        showForm("registerForm");
+      });
+
     showForm("loginForm");
     if (registerFormElement) {
       registerFormElement.addEventListener(
@@ -405,264 +199,179 @@ window.addEventListener("load", () => {
 function logout() {
   window.location.href = "index.html";
 }
+
+function createCard(nombre, img, pre) {
+  if (log) {
+    return `
+      <div class="col-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center">
+        <div class="card text-center mx-auto outfit-card">
+          <img src="${img}" class="card-img-top img-fluid" alt="${nombre}" />
+          <div class="card-body">
+            <p class="card-text">${nombre}</p>
+            <p class="card-text text-primary fw-bold">$${pre}</p>
+            <button class="btn btn-primary add-to-cart" data-outfit="${nombre}" data-price="${pre}">Add to cart</button>
+          </div>
+        </div>
+      </div>
+    `;
+  } else {
+    return `
+      <div class="col-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center">
+        <div class="card text-center mx-auto outfit-card">
+          <img src="${img}" class="card-img-top img-fluid" alt="${nombre}" />
+          <div class="card-body">
+            <p class="card-text">${nombre}</p>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+}
+
 function loadSection(section) {
+  console.log("Section: ", section);
   const mainContent = document.getElementById("main-content");
   let html = "";
+  let productos = [];
+
   if (section === "pantalones") {
-    html = `
-        <div class="row justify-content-center g-2 outfits-row">
-          <div class="col-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center">
-            <div class="card text-center mx-auto outfit-card">
-              <img src="./assets/cards/pantalon1.jpg" class="card-img-top img-fluid" alt="Pantalón #1" />
-              <div class="card-body">
-                <p class="card-text">Pantalón #1</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center">
-            <div class="card text-center mx-auto outfit-card">
-              <img src="./assets/cards/pantalon2.jpg" class="card-img-top img-fluid" alt="Pantalón #2" />
-              <div class="card-body">
-                <p class="card-text">Pantalón #2</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center">
-            <div class="card text-center mx-auto outfit-card">
-              <img src="./assets/cards/pantalon3.jpg" class="card-img-top img-fluid" alt="Pantalón #3" />
-              <div class="card-body">
-                <p class="card-text">Pantalón #3</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center">
-            <div class="card text-center mx-auto outfit-card">
-              <img src="./assets/cards/pantalon4.jpg" class="card-img-top img-fluid" alt="Pantalón #4" />
-              <div class="card-body">
-                <p class="card-text">Pantalón #4</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center">
-            <div class="card text-center mx-auto outfit-card">
-              <img src="./assets/cards/pantalon5.jpg" class="card-img-top img-fluid" alt="Pantalón #5" />
-              <div class="card-body">
-                <p class="card-text">Pantalón #5</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center">
-            <div class="card text-center mx-auto outfit-card">
-              <img src="./assets/cards/pantalon6.jpg" class="card-img-top img-fluid" alt="Pantalón #6" />
-              <div class="card-body">
-                <p class="card-text">Pantalón #6</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center">
-            <div class="card text-center mx-auto outfit-card">
-              <img src="./assets/cards/pantalon7.jpg" class="card-img-top img-fluid" alt="Pantalón #7" />
-              <div class="card-body">
-                <p class="card-text">Pantalón #7</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center">
-            <div class="card text-center mx-auto outfit-card">
-              <img src="./assets/cards/pantalon8.jpg" class="card-img-top img-fluid" alt="Pantalón #8" />
-              <div class="card-body">
-                <p class="card-text">Pantalón #8</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center">
-            <div class="card text-center mx-auto outfit-card">
-              <img src="./assets/cards/pantalon9.jpg" class="card-img-top img-fluid" alt="Pantalón #9" />
-              <div class="card-body">
-                <p class="card-text">Pantalón #9</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center">
-            <div class="card text-center mx-auto outfit-card">
-              <img src="./assets/cards/pantalon10.jpg" class="card-img-top img-fluid" alt="Pantalón #10" />
-              <div class="card-body">
-                <p class="card-text">Pantalón #10</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      `;
+    productos = [
+      { nombre: "Pantalón #1", img: "./assets/cards/pantalon1.jpg", pre: 10.0 },
+      { nombre: "Pantalón #2", img: "./assets/cards/pantalon2.jpg", pre: 10.0 },
+      { nombre: "Pantalón #3", img: "./assets/cards/pantalon3.jpg", pre: 10.0 },
+      { nombre: "Pantalón #4", img: "./assets/cards/pantalon4.jpg", pre: 10.0 },
+      { nombre: "Pantalón #5", img: "./assets/cards/pantalon5.jpg", pre: 10.0 },
+      { nombre: "Pantalón #6", img: "./assets/cards/pantalon6.jpg", pre: 10.0 },
+      { nombre: "Pantalón #7", img: "./assets/cards/pantalon7.jpg", pre: 10.0 },
+      { nombre: "Pantalón #8", img: "./assets/cards/pantalon8.jpg", pre: 10.0 },
+      { nombre: "Pantalón #9", img: "./assets/cards/pantalon9.jpg", pre: 10.0 },
+      {
+        nombre: "Pantalón #10",
+        img: "./assets/cards/pantalon10.jpg",
+        pre: 10.0,
+      },
+    ];
   } else if (section === "remeras") {
-    html = `
-        <div class="row justify-content-center g-2 outfits-row">
-          <div class="col-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center">
-            <div class="card text-center mx-auto outfit-card">
-              <img src="./assets/cards/remera1.jpg" class="card-img-top img-fluid" alt="Remera #1" />
-              <div class="card-body">
-          <p class="card-text">Remera #1</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center">
-            <div class="card text-center mx-auto outfit-card">
-              <img src="./assets/cards/remera2.jpg" class="card-img-top img-fluid" alt="Remera #2" />
-              <div class="card-body">
-          <p class="card-text">Remera #2</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center">
-            <div class="card text-center mx-auto outfit-card">
-              <img src="./assets/cards/remera3.jpg" class="card-img-top img-fluid" alt="Remera #3" />
-              <div class="card-body">
-          <p class="card-text">Remera #3</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center">
-            <div class="card text-center mx-auto outfit-card">
-              <img src="./assets/cards/remera4.jpg" class="card-img-top img-fluid" alt="Remera #4" />
-              <div class="card-body">
-          <p class="card-text">Remera #4</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center">
-            <div class="card text-center mx-auto outfit-card">
-              <img src="./assets/cards/remera5.jpg" class="card-img-top img-fluid" alt="Remera #5" />
-              <div class="card-body">
-          <p class="card-text">Remera #5</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center">
-            <div class="card text-center mx-auto outfit-card">
-              <img src="./assets/cards/remera6.jpg" class="card-img-top img-fluid" alt="Remera #6" />
-              <div class="card-body">
-          <p class="card-text">Remera #6</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center">
-            <div class="card text-center mx-auto outfit-card">
-              <img src="./assets/cards/remera7.jpg" class="card-img-top img-fluid" alt="Remera #7" />
-              <div class="card-body">
-          <p class="card-text">Remera #7</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center">
-            <div class="card text-center mx-auto outfit-card">
-              <img src="./assets/cards/remera8.jpg" class="card-img-top img-fluid" alt="Remera #8" />
-              <div class="card-body">
-          <p class="card-text">Remera #8</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center">
-            <div class="card text-center mx-auto outfit-card">
-              <img src="./assets/cards/remera9.jpg" class="card-img-top img-fluid" alt="Remera #9" />
-              <div class="card-body">
-          <p class="card-text">Remera #9</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center">
-            <div class="card text-center mx-auto outfit-card">
-              <img src="./assets/cards/remera10.jpg" class="card-img-top img-fluid" alt="Remera #10" />
-              <div class="card-body">
-          <p class="card-text">Remera #10</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      `;
+    productos = [
+      { nombre: "Remera #1", img: "./assets/cards/remera1.jpg", pre: 10.0 },
+      { nombre: "Remera #2", img: "./assets/cards/remera2.jpg", pre: 10.0 },
+      { nombre: "Remera #3", img: "./assets/cards/remera3.jpg", pre: 10.0 },
+      { nombre: "Remera #4", img: "./assets/cards/remera4.jpg", pre: 10.0 },
+      { nombre: "Remera #5", img: "./assets/cards/remera5.jpg", pre: 10.0 },
+      { nombre: "Remera #6", img: "./assets/cards/remera6.jpg", pre: 10.0 },
+      { nombre: "Remera #7", img: "./assets/cards/remera7.jpg", pre: 10.0 },
+      { nombre: "Remera #8", img: "./assets/cards/remera8.jpg", pre: 10.0 },
+      { nombre: "Remera #9", img: "./assets/cards/remera9.jpg", pre: 10.0 },
+      { nombre: "Remera #10", img: "./assets/cards/remera10.jpg", pre: 10.0 },
+    ];
   } else if (section === "camperas") {
-    html = `
-        <div class="row justify-content-center g-2 outfits-row">
-          <div class="col-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center">
-            <div class="card text-center mx-auto outfit-card">
-              <img src="./assets/cards/campera1.jpg" class="card-img-top img-fluid" alt="Campera #1" />
-              <div class="card-body">
-          <p class="card-text">Campera #1</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center">
-            <div class="card text-center mx-auto outfit-card">
-              <img src="./assets/cards/campera2.jpg" class="card-img-top img-fluid" alt="Campera #2" />
-              <div class="card-body">
-          <p class="card-text">Campera #2</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center">
-            <div class="card text-center mx-auto outfit-card">
-              <img src="./assets/cards/campera3.jpg" class="card-img-top img-fluid" alt="Campera #3" />
-              <div class="card-body">
-          <p class="card-text">Campera #3</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center">
-            <div class="card text-center mx-auto outfit-card">
-              <img src="./assets/cards/campera4.jpg" class="card-img-top img-fluid" alt="Campera #4" />
-              <div class="card-body">
-          <p class="card-text">Campera #4</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center">
-            <div class="card text-center mx-auto outfit-card">
-              <img src="./assets/cards/campera5.jpg" class="card-img-top img-fluid" alt="Campera #5" />
-              <div class="card-body">
-          <p class="card-text">Campera #5</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center">
-            <div class="card text-center mx-auto outfit-card">
-              <img src="./assets/cards/campera6.jpg" class="card-img-top img-fluid" alt="Campera #6" />
-              <div class="card-body">
-          <p class="card-text">Campera #6</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center">
-            <div class="card text-center mx-auto outfit-card">
-              <img src="./assets/cards/campera7.jpg" class="card-img-top img-fluid" alt="Campera #7" />
-              <div class="card-body">
-          <p class="card-text">Campera #7</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center">
-            <div class="card text-center mx-auto outfit-card">
-              <img src="./assets/cards/campera8.jpg" class="card-img-top img-fluid" alt="Campera #8" />
-              <div class="card-body">
-          <p class="card-text">Campera #8</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center">
-            <div class="card text-center mx-auto outfit-card">
-              <img src="./assets/cards/campera9.jpg" class="card-img-top img-fluid" alt="Campera #9" />
-              <div class="card-body">
-          <p class="card-text">Campera #9</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center">
-            <div class="card text-center mx-auto outfit-card">
-              <img src="./assets/cards/campera10.jpg" class="card-img-top img-fluid" alt="Campera #10" />
-              <div class="card-body">
-          <p class="card-text">Campera #10</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      `;
+    productos = [
+      { nombre: "Campera #1", img: "./assets/cards/campera1.jpg", pre: 10.0 },
+      { nombre: "Campera #2", img: "./assets/cards/campera2.jpg", pre: 10.0 },
+      { nombre: "Campera #3", img: "./assets/cards/campera3.jpg", pre: 10.0 },
+      { nombre: "Campera #4", img: "./assets/cards/campera4.jpg", pre: 10.0 },
+      { nombre: "Campera #5", img: "./assets/cards/campera5.jpg", pre: 10.0 },
+      { nombre: "Campera #6", img: "./assets/cards/campera6.jpg", pre: 10.0 },
+      { nombre: "Campera #7", img: "./assets/cards/campera7.jpg", pre: 10.0 },
+      { nombre: "Campera #8", img: "./assets/cards/campera8.jpg", pre: 10.0 },
+      { nombre: "Campera #9", img: "./assets/cards/campera9.jpg", pre: 10.0 },
+      { nombre: "Campera #10", img: "./assets/cards/campera10.jpg", pre: 10.0 },
+    ];
+  } else if (section === "index") {
+    productos = [
+      { nombre: "Outfit #1", img: "./assets/cards/outfit1.jpg", pre: 10.0 },
+      { nombre: "Outfit #2", img: "./assets/cards/outfit2.jpg", pre: 10.0 },
+      { nombre: "Outfit #3", img: "./assets/cards/outfit3.jpg", pre: 10.0 },
+      { nombre: "Outfit #4", img: "./assets/cards/outfit4.jpg", pre: 10.0 },
+      { nombre: "Outfit #5", img: "./assets/cards/outfit5.jpg", pre: 10.0 },
+      { nombre: "Outfit #6", img: "./assets/cards/outfit6.jpg", pre: 10.0 },
+      { nombre: "Outfit #7", img: "./assets/cards/outfit7.jpg", pre: 10.0 },
+      { nombre: "Outfit #8", img: "./assets/cards/outfit8.jpg", pre: 10.0 },
+      { nombre: "Outfit #9", img: "./assets/cards/outfit9.jpg", pre: 10.0 },
+      { nombre: "Outfit #10", img: "./assets/cards/outfit10.jpg", pre: 10.0 },
+    ];
   }
+
+  if (productos.length > 0) {
+    html = `<div class="row justify-content-center g-2 outfits-row">
+      ${productos.map((p) => createCard(p.nombre, p.img, p.pre)).join("")}
+    </div>`;
+  }
+
   mainContent.innerHTML = html;
+  attachCartButtons();
 }
+
+const cart = {};
+const cartDropdown = document.getElementById("cart-dropdown");
+const cartItemsList = document.getElementById("cart-items");
+
+function updateCartUI() {
+  cartItemsList.innerHTML = "";
+  const outfits = Object.entries(cart);
+
+  if (outfits.length === 0) {
+    cartItemsList.innerHTML =
+      '<li class="dropdown-item text-muted">Carrito vacío</li>';
+    return;
+  }
+
+  let total = 0;
+  outfits.forEach(([outfit, data]) => {
+    const price = data.price || 0;
+    const count = data.count;
+    const subtotal = price * count;
+    total += subtotal;
+
+    const li = document.createElement("li");
+    li.className =
+      "dropdown-item d-flex justify-content-between align-items-center";
+    li.innerHTML = `
+      <span>${outfit} <span class="badge bg-secondary">${count}</span></span>
+      <span>$${subtotal.toLocaleString()}</span>
+    `;
+    cartItemsList.appendChild(li);
+  });
+
+  const totalLi = document.createElement("li");
+  totalLi.className =
+    "dropdown-item fw-bold border-top mt-2 d-flex justify-content-between";
+  totalLi.innerHTML = `<span>Total</span><span>$${total.toLocaleString()}</span>`;
+  cartItemsList.appendChild(totalLi);
+
+  // Botón para continuar compra
+  const checkoutLi = document.createElement("li");
+  checkoutLi.className = "dropdown-item text-center";
+  checkoutLi.innerHTML = `
+    <a href="checkout.html" class="btn btn-success w-100 mt-2">Continuar compra</a>
+  `;
+  cartItemsList.appendChild(checkoutLi);
+}
+
+function attachCartButtons() {
+  document.querySelectorAll(".add-to-cart").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const outfit = btn.getAttribute("data-outfit");
+      const price = parseFloat(btn.getAttribute("data-price")) || 0;
+
+      if (!cart[outfit]) {
+        cart[outfit] = { count: 1, price: price };
+      } else {
+        cart[outfit].count++;
+      }
+
+      cartDropdown.style.display = "block";
+      updateCartUI();
+    });
+  });
+}
+
+document.querySelectorAll(".globo").forEach((globo) => {
+  globo.addEventListener("click", function (e) {
+    e.stopPropagation();
+    cartItemsList.parentElement.classList.toggle("show");
+  });
+});
+document.addEventListener("click", function () {
+  cartItemsList.parentElement.classList.remove("show");
+});
