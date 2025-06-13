@@ -234,17 +234,18 @@ function loadSection(section) {
   let html = "";
   let productos = [];
 
+  // Productos hardcodeados (sin precio)
   if (section === "pantalones") {
     productos = [
-      { nombre: "Pantalón #1", img: "./assets/cards/pantalon1.jpg", pre: 10.0 },
-      { nombre: "Pantalón #2", img: "./assets/cards/pantalon2.jpg", pre: 10.0 },
-      { nombre: "Pantalón #3", img: "./assets/cards/pantalon3.jpg", pre: 10.0 },
-      { nombre: "Pantalón #4", img: "./assets/cards/pantalon4.jpg", pre: 10.0 },
-      { nombre: "Pantalón #5", img: "./assets/cards/pantalon5.jpg", pre: 10.0 },
-      { nombre: "Pantalón #6", img: "./assets/cards/pantalon6.jpg", pre: 10.0 },
-      { nombre: "Pantalón #7", img: "./assets/cards/pantalon7.jpg", pre: 10.0 },
-      { nombre: "Pantalón #8", img: "./assets/cards/pantalon8.jpg", pre: 10.0 },
-      { nombre: "Pantalón #9", img: "./assets/cards/pantalon9.jpg", pre: 10.0 },
+      { nombre: "Pantalón #1", img: "./assets/cards/pantalon1.jpg" },
+      { nombre: "Pantalón #2", img: "./assets/cards/pantalon2.jpg" },
+      { nombre: "Pantalón #3", img: "./assets/cards/pantalon3.jpg" },
+      { nombre: "Pantalón #4", img: "./assets/cards/pantalon4.jpg" },
+      { nombre: "Pantalón #5", img: "./assets/cards/pantalon5.jpg" },
+      { nombre: "Pantalón #6", img: "./assets/cards/pantalon6.jpg" },
+      { nombre: "Pantalón #7", img: "./assets/cards/pantalon7.jpg" },
+      { nombre: "Pantalón #8", img: "./assets/cards/pantalon8.jpg" },
+      { nombre: "Pantalón #9", img: "./assets/cards/pantalon9.jpg" },
       {
         nombre: "Pantalón #10",
         img: "./assets/cards/pantalon10.jpg",
@@ -253,53 +254,68 @@ function loadSection(section) {
     ];
   } else if (section === "remeras") {
     productos = [
-      { nombre: "Remera #1", img: "./assets/cards/remera1.jpg", pre: 10.0 },
-      { nombre: "Remera #2", img: "./assets/cards/remera2.jpg", pre: 10.0 },
-      { nombre: "Remera #3", img: "./assets/cards/remera3.jpg", pre: 10.0 },
-      { nombre: "Remera #4", img: "./assets/cards/remera4.jpg", pre: 10.0 },
-      { nombre: "Remera #5", img: "./assets/cards/remera5.jpg", pre: 10.0 },
-      { nombre: "Remera #6", img: "./assets/cards/remera6.jpg", pre: 10.0 },
-      { nombre: "Remera #7", img: "./assets/cards/remera7.jpg", pre: 10.0 },
-      { nombre: "Remera #8", img: "./assets/cards/remera8.jpg", pre: 10.0 },
-      { nombre: "Remera #9", img: "./assets/cards/remera9.jpg", pre: 10.0 },
-      { nombre: "Remera #10", img: "./assets/cards/remera10.jpg", pre: 10.0 },
+      { nombre: "Remera #1", img: "./assets/cards/remera1.jpg" },
+      { nombre: "Remera #2", img: "./assets/cards/remera2.jpg" },
+      { nombre: "Remera #3", img: "./assets/cards/remera3.jpg" },
+      { nombre: "Remera #4", img: "./assets/cards/remera4.jpg" },
+      { nombre: "Remera #5", img: "./assets/cards/remera5.jpg" },
+      { nombre: "Remera #6", img: "./assets/cards/remera6.jpg" },
+      { nombre: "Remera #7", img: "./assets/cards/remera7.jpg" },
+      { nombre: "Remera #8", img: "./assets/cards/remera8.jpg" },
+      { nombre: "Remera #9", img: "./assets/cards/remera9.jpg" },
+      { nombre: "Remera #10", img: "./assets/cards/remera10.jpg" },
     ];
   } else if (section === "camperas") {
     productos = [
-      { nombre: "Campera #1", img: "./assets/cards/campera1.jpg", pre: 10.0 },
-      { nombre: "Campera #2", img: "./assets/cards/campera2.jpg", pre: 10.0 },
-      { nombre: "Campera #3", img: "./assets/cards/campera3.jpg", pre: 10.0 },
-      { nombre: "Campera #4", img: "./assets/cards/campera4.jpg", pre: 10.0 },
-      { nombre: "Campera #5", img: "./assets/cards/campera5.jpg", pre: 10.0 },
-      { nombre: "Campera #6", img: "./assets/cards/campera6.jpg", pre: 10.0 },
-      { nombre: "Campera #7", img: "./assets/cards/campera7.jpg", pre: 10.0 },
-      { nombre: "Campera #8", img: "./assets/cards/campera8.jpg", pre: 10.0 },
-      { nombre: "Campera #9", img: "./assets/cards/campera9.jpg", pre: 10.0 },
-      { nombre: "Campera #10", img: "./assets/cards/campera10.jpg", pre: 10.0 },
+      { nombre: "Campera #1", img: "./assets/cards/campera1.jpg" },
+      { nombre: "Campera #2", img: "./assets/cards/campera2.jpg" },
+      { nombre: "Campera #3", img: "./assets/cards/campera3.jpg" },
+      { nombre: "Campera #4", img: "./assets/cards/campera4.jpg" },
+      { nombre: "Campera #5", img: "./assets/cards/campera5.jpg" },
+      { nombre: "Campera #6", img: "./assets/cards/campera6.jpg" },
+      { nombre: "Campera #7", img: "./assets/cards/campera7.jpg" },
+      { nombre: "Campera #8", img: "./assets/cards/campera8.jpg" },
+      { nombre: "Campera #9", img: "./assets/cards/campera9.jpg" },
+      { nombre: "Campera #10", img: "./assets/cards/campera10.jpg" },
     ];
   } else if (section === "index") {
     productos = [
-      { nombre: "Outfit #1", img: "./assets/cards/outfit1.jpg", pre: 10.0 },
-      { nombre: "Outfit #2", img: "./assets/cards/outfit2.jpg", pre: 10.0 },
-      { nombre: "Outfit #3", img: "./assets/cards/outfit3.jpg", pre: 10.0 },
-      { nombre: "Outfit #4", img: "./assets/cards/outfit4.jpg", pre: 10.0 },
-      { nombre: "Outfit #5", img: "./assets/cards/outfit5.jpg", pre: 10.0 },
-      { nombre: "Outfit #6", img: "./assets/cards/outfit6.jpg", pre: 10.0 },
-      { nombre: "Outfit #7", img: "./assets/cards/outfit7.jpg", pre: 10.0 },
-      { nombre: "Outfit #8", img: "./assets/cards/outfit8.jpg", pre: 10.0 },
-      { nombre: "Outfit #9", img: "./assets/cards/outfit9.jpg", pre: 10.0 },
-      { nombre: "Outfit #10", img: "./assets/cards/outfit10.jpg", pre: 10.0 },
+      { nombre: "Outfit #1", img: "./assets/cards/outfit1.jpg" },
+      { nombre: "Outfit #2", img: "./assets/cards/outfit2.jpg" },
+      { nombre: "Outfit #3", img: "./assets/cards/outfit3.jpg" },
+      { nombre: "Outfit #4", img: "./assets/cards/outfit4.jpg" },
+      { nombre: "Outfit #5", img: "./assets/cards/outfit5.jpg" },
+      { nombre: "Outfit #6", img: "./assets/cards/outfit6.jpg" },
+      { nombre: "Outfit #7", img: "./assets/cards/outfit7.jpg" },
+      { nombre: "Outfit #8", img: "./assets/cards/outfit8.jpg" },
+      { nombre: "Outfit #9", img: "./assets/cards/outfit9.jpg" },
+      { nombre: "Outfit #10", img: "./assets/cards/outfit10.jpg" },
     ];
   }
 
-  if (productos.length > 0) {
-    html = `<div class="row justify-content-center g-2 outfits-row">
-      ${productos.map((p) => createCard(p.nombre, p.img, p.pre)).join("")}
-    </div>`;
-  }
+  // Traer precios desde precios.json y combinarlos
+  fetch("./assets/data/precios.json")
+    .then((response) => response.json())
+    .then((precios) => {
+      productos = productos.map((p) => ({
+        ...p,
+        pre: precios[p.nombre] !== undefined ? precios[p.nombre] : "N/A",
+      }));
 
-  mainContent.innerHTML = html;
-  attachCartButtons();
+      if (productos.length > 0) {
+        html = `<div class="row justify-content-center g-2 outfits-row">
+          ${productos.map((p) => createCard(p.nombre, p.img, p.pre)).join("")}
+        </div>`;
+      } else {
+        html = "<p>No hay productos para mostrar.</p>";
+      }
+      mainContent.innerHTML = html;
+      attachCartButtons();
+    })
+    .catch((error) => {
+      console.error("Error cargando precios:", error);
+      mainContent.innerHTML = "<p>Error al cargar precios.</p>";
+    });
 }
 
 const cart = {};
