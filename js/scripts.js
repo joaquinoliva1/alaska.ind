@@ -104,7 +104,7 @@ window.addEventListener("load", () => {
       registerFormElement.addEventListener(
         "submit",
         function (event) {
-          event.preventDefault(); // Evita el envío tradicional
+          event.preventDefault();
           var password = document.getElementById("password");
           var confirmPassword = document.getElementById("confirmPassword");
           if (password.value !== confirmPassword.value) {
@@ -117,7 +117,15 @@ window.addEventListener("load", () => {
             event.stopPropagation();
           } else {
             event.preventDefault();
+            // Guardar usuario en localStorage
+            const nombre = document.getElementById("nombre").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const user = { nombre, email, password };
+            localStorage.setItem("user", JSON.stringify(user));
             alert("Te registraste con exito.");
+            // Iniciar sesión automáticamente
+            sessionStorage.setItem("loggedIn", "true");
             window.location.href = "home.html";
             dropdownMenu.classList.remove("show-always");
             navbarDropdownAuthBtn.setAttribute("aria-expanded", "false");
@@ -190,13 +198,33 @@ window.addEventListener("load", () => {
     if (loginFormElement) {
       loginFormElement.addEventListener("submit", function (event) {
         event.preventDefault();
-        window.location.href = "home.html";
+        const email = document.getElementById("loginEmail").value;
+        const password = document.getElementById("loginPassword").value;
+        const storedUser = JSON.parse(localStorage.getItem("user"));
+
+        if (
+          storedUser &&
+          storedUser.email === email &&
+          storedUser.password === password
+        ) {
+          sessionStorage.setItem("loggedIn", "true");
+          window.location.href = "home.html";
+        } else {
+          alert("Usuario o contraseña incorrectos");
+        }
       });
     }
   })();
 });
 
+if (window.location.pathname.endsWith("home.html")) {
+  if (sessionStorage.getItem("loggedIn") !== "true") {
+    window.location.href = "index.html";
+  }
+}
+
 function logout() {
+  sessionStorage.removeItem("loggedIn");
   window.location.href = "index.html";
 }
 
@@ -234,7 +262,6 @@ function loadSection(section) {
   let html = "";
   let productos = [];
 
-  // Productos hardcodeados (sin precio)
   if (section === "pantalones") {
     productos = [
       { nombre: "Pantalón #1", img: "./assets/cards/pantalon1.jpg" },
