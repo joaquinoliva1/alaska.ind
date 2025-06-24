@@ -19,34 +19,42 @@
   <body onload="loadSection('index')">
     <header>
       <nav class="navbar navbar-expand-lg navbar-light bg-light px-3 fixed-top">
-        <div
-          class="container-fluid d-flex justify-content-between align-items-center"
-        >
+        <div class="container-fluid d-flex justify-content-between align-items-center">
           <!-- Logo a la izquierda -->
-          <a class="navbar-brand me-3">
-            <a
-                  class="nav-link"
-                  href="#"
-                  onclick="loadSection('index'); return false;"
-                >
-                <img
+          <a class="navbar-brand me-3" href="home.html">
+            <img
               src="./assets/img/logo.png"
               alt="Logo"
               height="30rem"
               class="d-inline-block align-top"
             />
-            </a>
           </a>
-          <!-- Menú de secciones en el centro -->
-          <div class="d-none d-lg-flex flex-grow-1 justify-content-center">
-            <ul class="navbar-nav mb-2 mb-lg-0 flex-row gap-3">
+          <!-- Menú de secciones y acceso en el colapsable -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSections"
+            aria-controls="navbarSections"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse flex-grow-1 justify-content-center"
+            id="navbarSections"
+          >
+            <ul
+              class="navbar-nav mb-2 mb-lg-0 flex-lg-row gap-lg-3 w-100 justify-content-lg-center align-items-lg-center"
+            >
               <li class="nav-item">
                 <a
                   class="nav-link"
                   href="#"
                   onclick="loadSection('pantalones'); return false;"
+                  >Pantalones</a
                 >
-                Pantalones</a>
               </li>
               <li class="nav-item">
                 <a
@@ -64,36 +72,33 @@
                   >Camperas</a
                 >
               </li>
-            </ul>
-          </div>
-          <!-- Dropdown a la derecha -->
-          <div class="ms-auto">
-            <ul class="navbar-nav mb-2 mb-lg-0">
-              <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdownAuth"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                <img src="./assets/img/user.png" style="height: 2.2rem;">
-              </a>
-              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownAuth">
-                <li>
-                <a class="dropdown-item" href="index.html">Cerrar sesión</a>
-                </li>
-                <li>
-                <a class="dropdown-item text-danger" href="index.html" onclick="return confirm('¿Estás seguro de que deseas eliminar tu cuenta?');">Eliminar cuenta</a>
-                </li>
-              </ul>
+              <!-- Dropdown de acceso integrado en el colapsable -->
+              <li class="nav-item dropdown ms-lg-auto">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdownAuth"
+                  role="button"
+                  aria-expanded="false"
+                  data-bs-toggle="dropdown"
+                >
+                  <img src="./assets/img/user.png" style="height: 2.2rem;">
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownAuth">
+                  <li>
+                    <a class="dropdown-item" href="#" onclick="logout(); return false;">Cerrar sesión</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item text-danger" href="#" onclick="if(confirm('¿Estás seguro de que deseas eliminar tu cuenta?')) { localStorage.removeItem('user'); logout(); } return false;">Eliminar cuenta</a>
+                  </li>
+                </ul>
               </li>
             </ul>
           </div>
         </div>
       </nav>
     </header>
+    <div class="navbar-fixed-spacer"></div>
     <div style="height: 3rem"></div>
     <div id="main-content" class="container-fluid my-5" ></div>
     <div class="dropdown" id="cart-dropdown" style="display: none;">

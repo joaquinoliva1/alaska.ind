@@ -31,9 +31,25 @@
               class="d-inline-block align-top"
             />
           </a>
-          <!-- Menú de secciones en el centro -->
-          <div class="d-none d-lg-flex flex-grow-1 justify-content-center">
-            <ul class="navbar-nav mb-2 mb-lg-0 flex-row gap-3">
+          <!-- Menú de secciones y acceso en el colapsable -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSections"
+            aria-controls="navbarSections"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse flex-grow-1 justify-content-center"
+            id="navbarSections"
+          >
+            <ul
+              class="navbar-nav mb-2 mb-lg-0 flex-lg-row gap-lg-3 w-100 justify-content-lg-center align-items-lg-center"
+            >
               <li class="nav-item">
                 <a
                   class="nav-link"
@@ -58,18 +74,15 @@
                   >Camperas</a
                 >
               </li>
-            </ul>
-          </div>
-          <!-- Dropdown a la derecha -->
-          <div class="ms-auto">
-            <ul class="navbar-nav mb-2 mb-lg-0">
-              <li class="nav-item dropdown">
+              <!-- Dropdown de acceso integrado en el colapsable -->
+              <li class="nav-item dropdown ms-lg-auto">
                 <a
                   class="nav-link dropdown-toggle"
                   href="#"
                   id="navbarDropdownAuth"
                   role="button"
                   aria-expanded="false"
+                  data-bs-toggle="dropdown"
                 >
                   access
                 </a>
@@ -232,6 +245,7 @@
         </div>
       </nav>
     </header>
+    <div class="navbar-fixed-spacer"></div>
     <div style="height: 3rem"></div>
     <div id="main-content" class="container-fluid my-5"></div>
     <footer
