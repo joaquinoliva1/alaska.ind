@@ -24,12 +24,10 @@ body {
 .card.outfit-card .card-img-top {
   flex: 0 0 auto;
   width: 100%;
-  height: auto;
+  height: 14rem;
   object-fit: cover;
   border-bottom: none;
   margin-bottom: 0;
-  min-height: 8rem;
-  max-height: 22rem;
 }
 .card.outfit-card .card-body {
   flex: 0 0 auto;

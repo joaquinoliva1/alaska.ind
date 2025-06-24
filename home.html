@@ -19,13 +19,15 @@
   <body onload="loadSection('index')">
     <header>
       <nav class="navbar navbar-expand-lg navbar-light bg-light px-3 fixed-top">
-        <div class="container-fluid d-flex justify-content-between align-items-center">
+        <div
+          class="container-fluid d-flex justify-content-between align-items-center"
+        >
           <!-- Logo a la izquierda -->
           <a class="navbar-brand me-3" href="home.html">
             <img
               src="./assets/img/logo.png"
               alt="Logo"
-              height="30rem"
+              height="48"
               class="d-inline-block align-top"
             />
           </a>
@@ -82,14 +84,31 @@
                   aria-expanded="false"
                   data-bs-toggle="dropdown"
                 >
-                  <img src="./assets/img/user.png" style="height: 2.2rem;">
+                  <img
+                    src="./assets/img/user.png"
+                    style="height: 2.2rem"
+                    alt="Usuario"
+                  />
                 </a>
-                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownAuth">
+                <ul
+                  class="dropdown-menu dropdown-menu-end"
+                  aria-labelledby="navbarDropdownAuth"
+                >
                   <li>
-                    <a class="dropdown-item" href="#" onclick="logout(); return false;">Cerrar sesión</a>
+                    <a
+                      class="dropdown-item"
+                      href="#"
+                      onclick="logout(); return false;"
+                      >Cerrar sesión</a
+                    >
                   </li>
                   <li>
-                    <a class="dropdown-item text-danger" href="#" onclick="if(confirm('¿Estás seguro de que deseas eliminar tu cuenta?')) { localStorage.removeItem('user'); logout(); } return false;">Eliminar cuenta</a>
+                    <a
+                      class="dropdown-item text-danger"
+                      href="#"
+                      onclick="if(confirm('¿Estás seguro de que deseas eliminar tu cuenta?')) { localStorage.removeItem('user'); logout(); } return false;"
+                      >Eliminar cuenta</a
+                    >
                   </li>
                 </ul>
               </li>
@@ -100,10 +119,19 @@
     </header>
     <div class="navbar-fixed-spacer"></div>
     <div style="height: 3rem"></div>
-    <div id="main-content" class="container-fluid my-5" ></div>
-    <div class="dropdown" id="cart-dropdown" style="display: none;">
-      <div class="globo" data-bs-toggle="dropdown" aria-expanded="false">
-          <img src="./assets/img/compras.png" style="height: 2rem;"></img>
+    <div id="main-content" class="container-fluid my-5"></div>
+    <div class="dropdown" id="cart-dropdown" style="display: none">
+      <div
+        class="globo"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+        role="button"
+      >
+        <img
+          src="./assets/img/compras.png"
+          style="height: 2rem"
+          alt="Carrito"
+        />
       </div>
       <ul class="dropdown-menu dropdown-menu-end" id="cart-items">
         <li class="dropdown-item text-muted">Carrito vacío</li>
